@@ -1,0 +1,21 @@
+# vim-ruby-heredoc-syntax
+
+Enable highlight markdown code block with appropriate syntax.
+
+## Screenshot
+
+![screenshop.png](screenshot.png)
+
+## Option
+
+```vim
+" Add syntax rule
+let g:ruby_heredoc_syntax_filetypes = {
+        \ "xml" : {
+        \   "start" : "XML",
+        \},
+  \}
+
+" 'start' is heredoc start literal.
+```
+
