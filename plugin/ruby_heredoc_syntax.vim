@@ -51,6 +51,22 @@ if !exists('g:ruby_heredoc_syntax_filetypes')
   let g:ruby_heredoc_syntax_filetypes = {}
 endif
 
+function! s:enable_heredoc_syntax()
+  let defaults = deepcopy(g:ruby_heredoc_syntax_defaults)
+  let filetype_dic = extend(defaults, g:ruby_heredoc_syntax_filetypes)
+
+
+  for [filetype, option] in items(filetype_dic)
+    call ruby_heredoc_syntax#include_other_syntax(filetype)
+    call ruby_heredoc_syntax#enable_heredoc_highlight(filetype, option.start)
+  endfor
+endfunction
+
+augroup ruby_heredoc_syntax
+  autocmd!
+  autocmd Syntax ruby call s:enable_heredoc_syntax()
+augroup END
+
 let g:loaded_ruby_heredoc_syntax = 1
 
 let &cpo = s:save_cpo
