@@ -41,6 +41,9 @@ if !exists('g:ruby_heredoc_syntax_defaults')
         \ "sql" : {
         \   "start" : "SQL",
         \},
+        \ "html" : {
+        \   "start" : "HTML",
+        \},
   \}
 endif
 
