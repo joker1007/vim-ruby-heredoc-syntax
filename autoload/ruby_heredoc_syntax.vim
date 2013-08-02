@@ -70,11 +70,15 @@ function! ruby_heredoc_syntax#enable_heredoc_highlight(filetype, start)
   let regexp1 = "\\%(\\%(class\\s*\\|\\%([]})\"'.]\\|::\\)\\)\\_s*\\|\\w\\)\\@<!<<-\\=\\zs".a:start
   let syntax1 = 'syntax region '.start_region.' matchGroup=rubyStringDelimiter start=+'.regexp1.'+ end=+$+ oneline contains=ALLBUT,@rubyNotTop'
 
-  let regexp2 = "\\%(\\%(class\\|::\\)\\_s*\\|\\%([]}).]\\)\\s\\|\\w\\)\\@<!<<-\\=\\z(".a:start."\\)\\ze\\%(.*<<-\\=['`\"]\\=\\h\\)\\@!"
-  let syntax2 = 'syntax region '.code_region.' matchGroup=rubyStringDelimiter start=+'.regexp2.'+hs=s+3 end=+^\s*\zs\z1$+ contains='.start_region.',@'.group.' fold keepend'
+  let regexp2 = "\\%(\\%(class\\|::\\)\\_s*\\|\\%([]}).]\\)\\s\\|\\w\\)\\@<!<<\\z(".a:start."\\)\\ze\\%(.*<<-\\=['`\"]\\=\\h\\)\\@!"
+  let syntax2 = 'syntax region '.code_region.' matchGroup=rubyStringDelimiter start=+'.regexp2.'+hs=s+3 end=+^\z1$+ contains='.start_region.',@'.group.' fold keepend'
+
+  let regexp3 = "\\%(\\%(class\\|::\\)\\_s*\\|\\%([]}).]\\)\\s\\|\\w\\)\\@<!<<-\\z(".a:start."\\)\\ze\\%(.*<<-\\=['`\"]\\=\\h\\)\\@!"
+  let syntax3 = 'syntax region '.code_region.' matchGroup=rubyStringDelimiter start=+'.regexp2.'+hs=s+3 end=+^\s*\zs\z1$+ contains='.start_region.',@'.group.' fold keepend'
 
   execute syntax1
   execute syntax2
+  execute syntax3
 endfunction
 
 let &cpo = s:save_cpo
