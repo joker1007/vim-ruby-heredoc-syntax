@@ -51,6 +51,41 @@ if !exists('g:ruby_heredoc_syntax_filetypes')
   let g:ruby_heredoc_syntax_filetypes = {}
 endif
 
+let s:context_filetypes_ruby = {
+\ 'ruby' : [
+\   {
+\     'start' : '\%(\%(class\s*\|\%([]})".]\|::\)\)\_s*\|\w\)\@<!<<-\=\zsJS',
+\     'end' : '^\s*\zsJS$',
+\     'filetype' : 'javascript',
+\   },
+\   {
+\     'start' : '\%(\%(class\s*\|\%([]})".]\|::\)\)\_s*\|\w\)\@<!<<-\=\zsCOFFEE',
+\     'end' : '^\s*\zsCOFFEE$',
+\     'filetype' : 'coffee',
+\   },
+\   {
+\     'start' : '\%(\%(class\s*\|\%([]})".]\|::\)\)\_s*\|\w\)\@<!<<-\=\zsHTML',
+\     'end' : '^\s*\zsHTML$',
+\     'filetype' : 'html',
+\   },
+\   {
+\     'start' : '\%(\%(class\s*\|\%([]})".]\|::\)\)\_s*\|\w\)\@<!<<-\=\zsSQL',
+\     'end' : '^\s*\zsSQL$',
+\     'filetype' : 'sql',
+\   },
+\ ]
+\}
+
+try
+  if !exists('g:context_filetype#filetypes')
+    let g:context_filetype#filetypes = s:context_filetypes_ruby
+  else
+    s:current_context_filetypes = copy(g:context_filetype#filetypes)
+    g:context_filetype#filetypes = extend(s:context_filetypes_ruby, s:current_context_filetypes)
+  endif
+catch
+endtry
+
 function! s:enable_heredoc_syntax()
   let defaults = deepcopy(g:ruby_heredoc_syntax_defaults)
   let filetype_dic = extend(defaults, g:ruby_heredoc_syntax_filetypes)

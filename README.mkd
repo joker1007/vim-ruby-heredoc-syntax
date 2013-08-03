@@ -1,6 +1,10 @@
 # vim-ruby-heredoc-syntax
 
-Enable highlight markdown code block with appropriate syntax.
+this enable highlighting ruby here document code block with appropriate syntax.
+
+## For neosnippet & context\_filetype
+If you have context\_filetype.vim plugin,
+this add context filetype setting for ruby here document block
 
 ## Screenshot
 
