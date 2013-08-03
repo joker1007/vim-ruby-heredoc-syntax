@@ -2,9 +2,17 @@
 
 this enable highlighting ruby here document code block with appropriate syntax.
 
+## Install
+
+use neobundle.vim
+
+```vim
+NeoBundle 'joker1007/vim-markdown-quote-syntax'
+```
+
 ## For neosnippet & context\_filetype
 If you have context\_filetype.vim plugin,
-this add context filetype setting for ruby here document block
+this add context filetype setting for ruby here document block.
 
 ## Screenshot
 
