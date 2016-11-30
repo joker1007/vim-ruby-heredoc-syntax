@@ -90,7 +90,6 @@ function! s:enable_heredoc_syntax()
   let defaults = deepcopy(g:ruby_heredoc_syntax_defaults)
   let filetype_dic = extend(defaults, g:ruby_heredoc_syntax_filetypes)
 
-
   for [filetype, option] in items(filetype_dic)
     call ruby_heredoc_syntax#include_other_syntax(filetype)
     call ruby_heredoc_syntax#enable_heredoc_highlight(filetype, option.start)
