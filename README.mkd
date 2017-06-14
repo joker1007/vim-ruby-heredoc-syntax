@@ -1,24 +1,24 @@
 # vim-ruby-heredoc-syntax
 
-this enable highlighting ruby here document code block with appropriate syntax.
+This enables syntax highlighting in Ruby here document code blocks.
 
 ## Install
 
-use neobundle.vim
+Use neobundle.vim:
 
 ```vim
-NeoBundle 'joker1007/vim-markdown-quote-syntax'
+NeoBundle 'joker1007/vim-ruby-heredoc-syntax'
 ```
 
 ## For neosnippet & context\_filetype
-If you have context\_filetype.vim plugin,
-this add context filetype setting for ruby here document block.
+If you have the context\_filetype.vim plugin,
+this adds context filetype setting for Ruby here document block.
 
 ## Screenshot
 
 ![screenshot.png](screenshot.png)
 
-## Option
+## Options
 
 ```vim
 " Add syntax rule
