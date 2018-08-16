@@ -35,9 +35,6 @@ if !exists('g:ruby_heredoc_syntax_defaults')
         \ "javascript" : {
         \   "start" : "JS",
         \},
-        \ "coffee" : {
-        \   "start" : "COFFEE",
-        \},
         \ "sql" : {
         \   "start" : "SQL",
         \},
@@ -57,11 +54,6 @@ let s:context_filetypes_ruby = {
 \     'start' : '\%(\%(class\s*\|\%([]})".]\|::\)\)\_s*\|\w\)\@<!<<-\=\zsJS',
 \     'end' : '^\s*\zsJS$',
 \     'filetype' : 'javascript',
-\   },
-\   {
-\     'start' : '\%(\%(class\s*\|\%([]})".]\|::\)\)\_s*\|\w\)\@<!<<-\=\zsCOFFEE',
-\     'end' : '^\s*\zsCOFFEE$',
-\     'filetype' : 'coffee',
 \   },
 \   {
 \     'start' : '\%(\%(class\s*\|\%([]})".]\|::\)\)\_s*\|\w\)\@<!<<-\=\zsHTML',
