@@ -91,6 +91,7 @@ endfunction
 augroup ruby_heredoc_syntax
   autocmd!
   autocmd Syntax ruby call s:enable_heredoc_syntax()
+  autocmd Syntax ruby.rspec call s:enable_heredoc_syntax()
 augroup END
 
 let g:loaded_ruby_heredoc_syntax = 1
