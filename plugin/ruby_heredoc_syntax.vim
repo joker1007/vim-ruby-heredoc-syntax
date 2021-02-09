@@ -72,8 +72,8 @@ try
   if !exists('g:context_filetype#filetypes')
     let g:context_filetype#filetypes = s:context_filetypes_ruby
   else
-    s:current_context_filetypes = copy(g:context_filetype#filetypes)
-    g:context_filetype#filetypes = extend(s:context_filetypes_ruby, s:current_context_filetypes)
+    let s:current_context_filetypes = copy(g:context_filetype#filetypes)
+    let g:context_filetype#filetypes = extend(s:context_filetypes_ruby, s:current_context_filetypes)
   endif
 catch
 endtry
