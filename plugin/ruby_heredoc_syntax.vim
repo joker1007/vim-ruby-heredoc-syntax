@@ -51,17 +51,17 @@ endif
 let s:context_filetypes_ruby = {
 \ 'ruby' : [
 \   {
-\     'start' : '\%(\%(class\s*\|\%([]})".]\|::\)\)\_s*\|\w\)\@<!<<-\=\zsJS',
+\     'start' : '\%(\%(class\s*\|\%([]})".]\|::\)\)\_s*\|\w\)\@<!<<[-~]\=\zsJS',
 \     'end' : '^\s*\zsJS$',
 \     'filetype' : 'javascript',
 \   },
 \   {
-\     'start' : '\%(\%(class\s*\|\%([]})".]\|::\)\)\_s*\|\w\)\@<!<<-\=\zsHTML',
+\     'start' : '\%(\%(class\s*\|\%([]})".]\|::\)\)\_s*\|\w\)\@<!<<[-~]\=\zsHTML',
 \     'end' : '^\s*\zsHTML$',
 \     'filetype' : 'html',
 \   },
 \   {
-\     'start' : '\%(\%(class\s*\|\%([]})".]\|::\)\)\_s*\|\w\)\@<!<<-\=\zsSQL',
+\     'start' : '\%(\%(class\s*\|\%([]})".]\|::\)\)\_s*\|\w\)\@<!<<[-~]\=\zsSQL',
 \     'end' : '^\s*\zsSQL$',
 \     'filetype' : 'sql',
 \   },
